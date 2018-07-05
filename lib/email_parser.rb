@@ -12,7 +12,7 @@ class EmailParser
 
   def parse
     array_of_emails = @input_email.split(/[, ]/).uniq
-    
+    array_of_emails.delete_if {|element| element.empty?}
     array_of_emails
   end
 
